@@ -6,5 +6,9 @@ export class InfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const trackingPixelsBucket = new s3.Bucket(this, "TrackingPixels", {
+      bucketName: 'tracking-pixels',
+    });
+
   }
 }
